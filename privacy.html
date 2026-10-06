@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EasyTool Privacy Policy & API Disclosure - 100% transparent privacy practices. In-browser client-side file execution, zero permanent storage, and honest third-party API disclosures (Google Gemini & Background Removal).">
+  <meta name="keywords" content="EasyTool privacy, data protection, zero file retention, client-side processing, gemini api disclosure, rishabh kumar, akash kumar, farzi engineer">
+  <meta name="theme-color" content="#080911">
+  <title>Privacy Policy &amp; API Disclosure | EasyTool</title>
+
+  <!-- PWA & Mobile Web App Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="EasyTool">
+  <link rel="apple-touch-icon" href="icon.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Core App Stylesheets -->
+  <link rel="stylesheet" href="style.css?v=6.0">
+  <link rel="stylesheet" href="tools.css?v=6.0">
+
+  <style>
+    /* Privacy Portal Custom Micro-Styles */
+    .privacy-hero-wrap {
+      text-align: center;
+      margin-bottom: 2.75rem;
+      position: relative;
+    }
+    .privacy-quick-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .privacy-nav-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0.95rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .privacy-nav-pill:hover {
+      background: rgba(99, 102, 241, 0.18);
+      border-color: var(--primary);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+    .privacy-matrix-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 1.5rem 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: rgba(11, 14, 25, 0.6);
+      font-size: 0.88rem;
+    }
+    .privacy-matrix-table th {
+      background: rgba(19, 24, 42, 0.9);
+      padding: 1rem 1.25rem;
+      text-align: left;
+      font-weight: 700;
+      color: #ffffff;
+      border-bottom: 1px solid var(--border-medium);
+      font-size: 0.84rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .privacy-matrix-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      vertical-align: middle;
+      line-height: 1.5;
+    }
+    .privacy-matrix-table tr:last-child td {
+      border-bottom: none;
+    }
+    .privacy-matrix-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .lifecycle-diagram {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .lifecycle-step-card {
+      background: rgba(13, 17, 30, 0.8);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+    .lifecycle-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(99, 102, 241, 0.2);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .lifecycle-step-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.35rem;
+    }
+    .lifecycle-step-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    @media (max-width: 768px) {
+      .privacy-matrix-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app-container">
+
+    <!-- Top Sticky Navigation Bar -->
+    <header class="top-header">
+      <div class="nav-brand-wrap">
+        <a href="index.html" class="brand-logo" title="EasyTool Home">
+          <img src="icon.svg" alt="EasyTool Logo">
+          <div>
+            <div class="brand-title">EasyTool</div>
+            <div class="brand-subtitle-badge">FARZI ENGINEER</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navigation Pages -->
+      <nav class="nav-center-menu">
+        <a href="index.html" class="top-nav-link">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+        <a href="tools.html" class="top-nav-link">
+          <i class="fa-solid fa-toolbox"></i>
+          <span>All Tools</span>
+          <span class="top-nav-badge">68+</span>
+        </a>
+        <a href="about.html" class="top-nav-link">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>About</span>
+        </a>
+        <a href="privacy.html" class="top-nav-link active">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Privacy &amp; Disclosure</span>
+        </a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <div class="header-search-bar" onclick="App.openCommandPalette()" title="Search 68+ utilities">
+          <i class="fa-solid fa-magnifying-glass" style="color:var(--text-muted); font-size:0.85rem;"></i>
+          <input type="text" id="global-search-input" placeholder="Search 68+ utilities..." onclick="event.stopPropagation()">
+        </div>
+
+        <a href="tools.html" class="nav-cta-btn">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Launch Tools</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Dropdown Navigation Menu -->
+    <div class="mobile-nav-dropdown" id="mobile-dropdown-menu">
+      <a href="index.html" class="top-nav-link">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="tools.html" class="top-nav-link">
+        <i class="fa-solid fa-toolbox"></i>
+        <span>All Tools (68+)</span>
+      </a>
+      <a href="about.html" class="top-nav-link">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>About EasyTool</span>
+      </a>
+      <a href="privacy.html" class="top-nav-link active">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Privacy &amp; Disclosure</span>
+      </a>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="content-viewport" style="max-width:1040px;">
+
+        <!-- 1. Page Hero Header -->
+        <div class="privacy-hero-wrap">
+          <div class="hero-pill">
+            <i class="fa-solid fa-shield-halved" style="color:var(--accent-emerald);"></i> 100% Transparent Privacy &amp; Operating Disclosure
+          </div>
+          <h1 style="font-size:3rem; font-weight:900; letter-spacing:-0.03em; margin-bottom:0.75rem; line-height:1.15;">
+            Privacy Policy &amp; <span style="background:var(--grad-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Technology Disclosure</span>
+          </h1>
+          <p style="color:var(--text-secondary); font-size:1.1rem; max-width:760px; margin:0 auto; line-height:1.65;">
+            EasyTool processes files locally in your browser whenever technically possible. We believe in total honesty: clear badges, no hidden file retention, and explicit disclosures for third-party APIs.
+          </p>
+
+          <!-- Quick Jump Nav Pills -->
+          <div class="privacy-quick-nav">
+            <a href="#no-account" class="privacy-nav-pill"><i class="fa-solid fa-user-slash"></i> 1. No Login</a>
+            <a href="#zero-storage" class="privacy-nav-pill"><i class="fa-solid fa-database"></i> 2. Zero File Storage</a>
+            <a href="#lifecycle" class="privacy-nav-pill"><i class="fa-solid fa-rotate"></i> 3. Memory Lifecycle</a>
+            <a href="#matrix" class="privacy-nav-pill"><i class="fa-solid fa-table-columns"></i> 4. Local vs API Matrix</a>
+            <a href="#gemini-api" class="privacy-nav-pill"><i class="fa-solid fa-robot"></i> 5. Google Gemini AI</a>
+            <a href="#bg-removal" class="privacy-nav-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> 6. Background Cutout</a>
+            <a href="#security" class="privacy-nav-pill"><i class="fa-solid fa-lock"></i> 7. Security Standards</a>
+            <a href="#ownership" class="privacy-nav-pill"><i class="fa-solid fa-crown"></i> 8. Ownership</a>
+          </div>
+        </div>
+
+
+        <!-- 2. Main Privacy Prose Card -->
+        <div class="prose-card">
+
+          <!-- Section 1 -->
+          <div class="prose-section" id="no-account">
+            <h2 class="prose-title">
+              <i class="fa-solid fa-fingerprint" style="color:var(--primary);"></i>
+              1. No Account &amp; No Mandatory Registration
+            </h2>
+            <p class="prose-p">
+              EasyTool does <strong>not require login, registration, phone numbers, email addresses, or personal accounts</strong>. You can use every normal utility tool immediately upon visiting the website.
+            </p>
+            <p class="prose-p">
+              We do not track you across other websites, do not employ aggressive profiling cookies, and do not maintain user databases. The web application is engineered to function frictionlessly as a utility service.
+            </p>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="prose-section" id="zero-storage">
+            <h2 class="prose-title">
+              <i class="fa-solid fa-database" style="color:var(--accent-emerald);"></i>
+              2. Zero Permanent File Storage
+            </h2>
+            <p class="prose-p">
+              EasyTool does <strong>not operate any document storage database, permanent cloud file bucket, file upload logs, or file history archive</strong>.
+            </p>
+            <p class="prose-p">
+              For client-side tools (PDF manipulation, image conversion, Python 3 WASM scripts, calculations, encoding, media extraction), your files remain strictly inside your device’s browser memory. Zero bytes of your documents or images are transmitted over the internet to our servers.
+            </p>
+            <div class="prose-callout success">
+              <strong style="color:#6ee7b7;"><i class="fa-solid fa-circle-check"></i> Zero Retention Guarantee:</strong><br>
+              When you download your converted PDF, formatted code, or compressed image, the temporary in-memory Object URL is revoked, and the browser frees the RAM immediately. Nothing lingers on any server.
+            </div>
+          </div>
+
+          <!-- Section 3: In-Memory Lifecycle -->
+          <div class="prose-section" id="lifecycle">
+            <h2 class="prose-title">
+              <i class="fa-solid fa-microchip" style="color:var(--accent-cyan);"></i>
+              3. In-Browser Sandboxed File Lifecycle
+            </h2>
+            <p class="prose-p">
+              Every local tool strictly follows this local sandbox lifecycle:
+            </p>
+            
+            <div class="lifecycle-diagram">
+              <div class="lifecycle-step-card">
+                <div class="lifecycle-step-num">1</div>
+                <div class="lifecycle-step-title">Select &amp; Validate</div>
+                <div class="lifecycle-step-desc">File is read into browser RAM via HTML5 FileReader. Client validates MIME type and file size.</div>
+              </div>
+              <div class="lifecycle-step-card">
+                <div class="lifecycle-step-num">2</div>
+                <div class="lifecycle-step-title">Process in WASM</div>
+                <div class="lifecycle-step-desc">WebAssembly, Canvas, or Web Crypto processes pixels/data locally without network requests.</div>
+              </div>
+              <div class="lifecycle-step-card">
+                <div class="lifecycle-step-num">3</div>
+                <div class="lifecycle-step-title">Instant Download</div>
+                <div class="lifecycle-step-desc">Blob URL is synthesized in client memory and downloaded directly to your local file system.</div>
+              </div>
+              <div class="lifecycle-step-card" style="border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.06);">
+                <div class="lifecycle-step-num" style="background:rgba(16,185,129,0.2); color:#34d399; border-color:rgba(16,185,129,0.4);">4</div>
+                <div class="lifecycle-step-title" style="color:#6ee7b7;">Immediate Eviction</div>
+                <div class="lifecycle-step-desc">Object URL is revoked, references are cleared, and browser garbage collector reclaims memory.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: Comparison Matrix -->
+          <div class="prose-section" id="matrix">
+            <h2 class="prose-title">
+              <i class="fa-solid fa-code-compare" style="color:var(--accent-purple);"></i>
+              4. Honest Distinction: Local Tools vs External API Tools
+            </h2>
+            <p class="prose-p">
+              In accordance with our operating principles, we <strong>never</strong> make false claims such as <em>"100% private"</em> or <em>"no data ever leaves your device"</em> for tools that require external cloud APIs. Every tool is badged honestly:
+            </p>
+
+            <table class="privacy-matrix-table">
+              <thead>
+                <tr>
+                  <th>Criteria</th>
+                  <th>🟢 Local Browser Tools</th>
+                  <th>🔵 External API Tools (AI / BG)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Execution Environment</strong></td>
+                  <td>100% inside your device's browser sandbox (WebAssembly, Web Crypto, Canvas).</td>
+                  <td>Secure cloud infrastructure (Google Gemini API / Background.bg).</td>
+                </tr>
+                <tr>
+                  <td><strong>Network Transmission</strong></td>
+                  <td><span style="color:#34d399; font-weight:700;"><i class="fa-solid fa-shield-halved"></i> Zero Bytes Leave Device</span></td>
+                  <td>Secure TLS/HTTPS transmission of user prompt or image.</td>
+                </tr>
+                <tr>
+                  <td><strong>File Storage by EasyTool</strong></td>
+                  <td><span style="color:#34d399; font-weight:700;">Zero Permanent Storage</span> (RAM only)</td>
+                  <td><span style="color:#34d399; font-weight:700;">Zero Permanent Storage</span> (ephemeral roundtrip)</td>
+                </tr>
+                <tr>
+                  <td><strong>Account Required</strong></td>
+                  <td>No login, no registration</td>
+                  <td>No login, no registration</td>
+                </tr>
+                <tr>
+                  <td><strong>Examples</strong></td>
+                  <td>PDF Merger, Image Converter, GST Calculator, Python WASM, SHA-256 Hasher.</td>
+                  <td>AI Prompt Assistant, AI Summarizer, Magic Background Cutout.</td>
+                </tr>
+                <tr>
+                  <td><strong>UI Badge Shown</strong></td>
+                  <td><span class="tool-badge-pill local"><span class="badge-dot"></span> LOCAL</span></td>
+                  <td><span class="tool-badge-pill ai"><span class="badge-dot"></span> AI • GEMINI API</span> or <span class="tool-badge-pill api"><span class="badge-dot"></span> EXTERNAL API</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Section 5: Google Gemini API -->
+          <div class="prose-section" id="gemini-api">
+            <h2 class="prose-title">
+              <i class="fa-solid fa-robot" style="color:var(--accent-purple);"></i>
+              5. Google Gemini API Technology Disclosure
+            </h2>
+            <p class="prose-p">
+              Selected AI features in EasyTool (such as AI Prompt Assistant, Text Summarizer, and Grammar Evaluator) utilize the official <strong>Google Gemini API</strong> for natural language processing.
+            </p>
+            <p class="prose-p">
+              When you submit text to a Gemini-powered tool:
+            </p>
+            <ul style="margin-left:1.5rem; margin-bottom:1rem; color:var(--text-secondary); line-height:1.7;">
+              <li>Your entered prompt is transmitted through an encrypted EasyTool API proxy layer to Google's API endpoint.</li>
+              <li>EasyTool <strong>never saves your prompt or the generated output</strong> to any database or analytics store.</li>
+              <li>API secret keys are safeguarded entirely on the backend and are never exposed in client JavaScript.</li>
+            </ul>
+            <div class="prose-callout warning">
+              <strong style="color:#fbbf24;"><i class="fa-solid fa-circle-exclamation"></i> Mandatory Third-Party Notice:</strong><br>
+              This feature uses the Google Gemini API to process your input. Your input is securely transmitted to Google's service for computing the response in accordance with Google's API Terms and Privacy Policy.
+            </div>
+          </div>
+
+          <!-- Section 6: Background Removal API -->
+          <div class="prose-section" id="bg-removal">
+            <h2 class="prose-title">
+              <i class="fa-solid fa-wand-magic-sparkles" style="color:var(--accent-amber);"></i>
+              6. Background Removal API Technology Disclosure
+            </h2>
+            <p class="prose-p">
+              Advanced semantic image background removal requires deep computer vision models. Where local client-side models are technically prohibitive due to download size and memory constraints, EasyTool may route the image to an external processing partner (such as Background.bg).
+            </p>
+            <p class="prose-p">
+              The image is sent via secure HTTPS, processed solely to produce the cutout PNG mask, returned to your browser for immediate download, and deleted from temporary buffers. EasyTool retains zero copies of uploaded images.
+            </p>
+          </div>
+
+          <!-- Section 7: Security Standards -->
+          <div class="prose-section" id="security">
+            <h2 class="prose-title">
+              <i class="fa-solid fa-lock" style="color:var(--accent-emerald);"></i>
+              7. Security Standards &amp; Controls
+            </h2>
+            <p class="prose-p">
+              We apply production-grade security engineering principles across EasyTool:
+            </p>
+            <ul style="margin-left:1.5rem; margin-bottom:1rem; color:var(--text-secondary); line-height:1.7;">
+              <li><strong>Strict HTTPS:</strong> All traffic is encrypted using modern TLS 1.3/1.2 protocols.</li>
+              <li><strong>Client-Side Sanitization:</strong> All SVGs, HTML snippets, and formatted outputs are sanitized against cross-site scripting (XSS).</li>
+              <li><strong>MIME Type Verification:</strong> Strict file boundary checks prevent execution of arbitrary payloads.</li>
+              <li><strong>Memory Safety:</strong> Continuous object URL revocation and resource cleanup prevent browser memory leaks.</li>
+              <li><strong>Zero Permanent Logging:</strong> No recording of passwords generated in the Password Generator, numbers in Financial Calculators, or contents of merged PDFs.</li>
+            </ul>
+          </div>
+
+          <!-- Section 8: Ownership & Developer Attribution -->
+          <div class="prose-section" id="ownership" style="border-top:1px solid rgba(255,255,255,0.08); padding-top:2rem; margin-bottom:0;">
+            <div style="display:flex; align-items:center; gap:0.5rem; background:rgba(99,102,241,0.12); color:#a5b4fc; border:1px solid rgba(99,102,241,0.25); padding:0.35rem 0.85rem; border-radius:var(--radius-full); font-size:0.75rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1rem; width:fit-content;">
+              <i class="fa-solid fa-crown"></i> Project Ownership &bull; Farzi Engineer
+            </div>
+            <h3 style="font-size:1.35rem; font-weight:800; color:#ffffff; margin-bottom:0.5rem;">
+              EasyTool &bull; Owned &amp; Developed by Rishabh Kumar &amp; Akash Kumar
+            </h3>
+            <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.65; margin-bottom:1rem;">
+              EasyTool is a free and open-source project founded, owned, and operated by <strong>Rishabh Kumar</strong> (Core Owner &amp; Lead Systems Developer &bull; WebAssembly &bull; UI/UX) and <strong>Akash Kumar</strong> (Core Owner &amp; Full Stack Developer &bull; Architecture &bull; Tool Engines) under the <strong>Farzi Engineer</strong> initiative (<em>"Dimag Farzi &bull; Kaam Jugaad &bull; Result Zabardast"</em>).
+            </p>
+            <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.6;">
+              Official Website: <a href="https://easytool.farziengineer.in" target="_blank" rel="noopener" style="color:var(--accent-cyan); font-weight:600;">easytool.farziengineer.in</a><br>
+              Policy Last Updated: October 2026 &bull; Version 4.0 Production Release.<br>
+              Copyright &copy; 2026 Rishabh Kumar &amp; Akash Kumar. All rights reserved.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div>
+            <div class="brand-logo" style="margin-bottom:0.75rem;">
+              <img src="icon.svg" alt="EasyTool Logo" style="width:34px; height:34px;">
+              <span class="brand-title" style="font-size:1.25rem;">EasyTool</span>
+            </div>
+            <p class="footer-brand-desc">
+              Free &amp; Open-Source Online Utility Web Application. Designed with a local-first architecture for fast, private, and reliable everyday workflows.
+            </p>
+            <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(99,102,241,0.12); border:1px solid rgba(99,102,241,0.3); padding:0.4rem 0.85rem; border-radius:var(--radius-full); font-size:0.76rem; font-weight:700; color:#c7d2fe;">
+              <i class="fa-solid fa-bolt" style="color:#fbbf24;"></i> Developed by Rishabh Kumar &amp; Akash Kumar
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Navigation</div>
+            <ul class="footer-links-list">
+              <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+              <li><a href="tools.html"><i class="fa-solid fa-toolbox"></i> All Tools (68+)</a></li>
+              <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About EasyTool</a></li>
+              <li><a href="privacy.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Tool Studios</div>
+            <ul class="footer-links-list">
+              <li><a href="tools.html?cat=pdf"><i class="fa-solid fa-file-pdf"></i> PDF Studio</a></li>
+              <li><a href="tools.html?cat=calculators"><i class="fa-solid fa-calculator"></i> Calculators</a></li>
+              <li><a href="tools.html?cat=image"><i class="fa-solid fa-image"></i> Image Tools</a></li>
+              <li><a href="tools.html?cat=code"><i class="fa-solid fa-code"></i> Python &amp; Code</a></li>
+              <li><a href="tools.html?cat=ai"><i class="fa-solid fa-brain"></i> AI Utilities</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Trust &amp; Principles</div>
+            <ul class="footer-links-list">
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> 100% Client-Side Ready</span></li>
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> Zero Permanent Storage</span></li>
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> No Login or Accounts</span></li>
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> Zero Fake Tools</span></li>
+              <li><span style="color:var(--accent-cyan); font-size:0.82rem;"><i class="fa-solid fa-globe"></i> easytool.farziengineer.in</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+          <div class="footer-bottom-left">
+            <span class="footer-badge-brand">
+              <i class="fa-solid fa-bolt"></i> EasyTool
+            </span>
+            <span class="footer-badge-meta">Free &amp; Open-Source Platform</span>
+            <span class="footer-sep">&bull;</span>
+            <span class="footer-badge-devs">
+              Owned &amp; Developed by <strong>Rishabh Kumar &amp; Akash Kumar</strong>
+            </span>
+          </div>
+          <div class="footer-bottom-right">
+            <span class="footer-status-indicator">
+              <span class="pulse-indicator"></span>
+              <span>100% Client-Side Private</span>
+            </span>
+            <span class="footer-copyright-text">
+              &copy; 2026 Rishabh Kumar &amp; Akash Kumar.
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- PWA Installation Toast Banner for Mobile Phones -->
+    <div class="pwa-install-banner" id="pwa-install-banner">
+      <div class="pwa-banner-left">
+        <img src="icon.svg" alt="EasyTool App Icon" class="pwa-banner-icon">
+        <div class="pwa-banner-text">
+          <div class="pwa-banner-title">Install EasyTool App</div>
+          <div class="pwa-banner-sub">Install on phone for real app experience</div>
+        </div>
+      </div>
+      <div class="pwa-banner-actions">
+        <button class="pwa-install-btn" onclick="App.installPwaApp()">Install</button>
+        <button class="pwa-close-btn" onclick="App.dismissPwaBanner()" aria-label="Dismiss">&times;</button>
+      </div>
+    </div>
+
+    <!-- Native Mobile Bottom Navigation App Bar -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile Navigation App Bar">
+      <a href="index.html" class="bottom-nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="tools.html" class="bottom-nav-item">
+        <i class="fa-solid fa-toolbox"></i>
+        <span>Tools</span>
+      </a>
+      <button class="bottom-nav-item search-trigger" onclick="App.openCommandPalette()" aria-label="Quick Search">
+        <div class="bottom-search-circle">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <span>Search</span>
+      </button>
+      <a href="about.html" class="bottom-nav-item">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>About</span>
+      </a>
+      <a href="privacy.html" class="bottom-nav-item active">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Privacy</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- Command Palette Modal (Ctrl + K) -->
+  <div class="modal-overlay" id="cmd-palette-overlay">
+    <div class="command-modal">
+      <div class="cmd-search-wrap">
+        <i class="fa-solid fa-magnifying-glass" style="color:var(--primary); font-size:1.1rem;"></i>
+        <input type="text" id="cmd-search-input" class="cmd-search-input" placeholder="Type a tool name or keyword...">
+        <button type="button" class="cmd-close-btn" onclick="App.closeCommandPalette()" aria-label="Close search" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="cmd-results-list" id="cmd-results-list"></ul>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+  <script src="app.js?v=6.0"></script>
+</body>
+</html>

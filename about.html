@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About EasyTool - Free and open-source online utility platform owned and developed by Rishabh Kumar & Akash Kumar (Farzi Engineer). Local-first architecture, transparent API disclosures, and zero permanent storage.">
+  <meta name="keywords" content="About EasyTool, Rishabh Kumar, Akash Kumar, Farzi Engineer, Open Source Utilities, Local-First, Zero Storage, Privacy First">
+  <meta name="theme-color" content="#080911">
+  <title>About EasyTool | Open-Source &amp; Technology Disclosure</title>
+
+  <!-- PWA & Mobile Web App Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="EasyTool">
+  <link rel="apple-touch-icon" href="icon.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Core App Stylesheets -->
+  <link rel="stylesheet" href="style.css?v=6.0">
+  <link rel="stylesheet" href="tools.css?v=6.0">
+
+  <style>
+    .founder-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(99, 102, 241, 0.12);
+      color: #c7d2fe;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+    .about-feature-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: all var(--transition-fast);
+      backdrop-filter: blur(12px);
+    }
+    .about-feature-box:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app-container">
+
+    <!-- Top Sticky Navigation Bar -->
+    <header class="top-header">
+      <div class="nav-brand-wrap">
+        <a href="index.html" class="brand-logo" title="EasyTool Home">
+          <img src="icon.svg" alt="EasyTool Logo">
+          <div>
+            <div class="brand-title">EasyTool</div>
+            <div class="brand-subtitle-badge">FARZI ENGINEER</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navigation Pages -->
+      <nav class="nav-center-menu">
+        <a href="index.html" class="top-nav-link">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+        <a href="tools.html" class="top-nav-link">
+          <i class="fa-solid fa-toolbox"></i>
+          <span>All Tools</span>
+          <span class="top-nav-badge">68+</span>
+        </a>
+        <a href="about.html" class="top-nav-link active">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>About</span>
+        </a>
+        <a href="privacy.html" class="top-nav-link">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Privacy &amp; Disclosure</span>
+        </a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <div class="header-search-bar" onclick="App.openCommandPalette()" title="Search 68+ utilities">
+          <i class="fa-solid fa-magnifying-glass" style="color:var(--text-muted); font-size:0.85rem;"></i>
+          <input type="text" id="global-search-input" placeholder="Search 68+ utilities..." onclick="event.stopPropagation()">
+        </div>
+
+        <a href="tools.html" class="nav-cta-btn">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Launch Tools</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Dropdown Navigation Menu -->
+    <div class="mobile-nav-dropdown" id="mobile-dropdown-menu">
+      <a href="index.html" class="top-nav-link">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="tools.html" class="top-nav-link">
+        <i class="fa-solid fa-toolbox"></i>
+        <span>All Tools (68+)</span>
+      </a>
+      <a href="about.html" class="top-nav-link active">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>About EasyTool</span>
+      </a>
+      <a href="privacy.html" class="top-nav-link">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Privacy &amp; Disclosure</span>
+      </a>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="content-viewport" style="max-width:1080px;">
+
+        <!-- 1. Hero Title Banner -->
+        <div style="text-align:center; margin-bottom:3.25rem;">
+          <div class="hero-pill">
+            <i class="fa-solid fa-bolt" style="color:var(--accent-amber);"></i> Project Identity &bull; Farzi Engineer Core
+          </div>
+          <h1 style="font-size:3.2rem; font-weight:900; letter-spacing:-0.03em; margin-bottom:0.85rem; line-height:1.15;">
+            About <span style="background:var(--grad-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">EasyTool</span>
+          </h1>
+          <p style="color:var(--text-secondary); font-size:1.12rem; max-width:780px; margin:0 auto; line-height:1.65;">
+            EasyTool is a free and open-source collection of modern online utilities designed to make everyday digital tasks simple, instant, and secure without logins or paywalls.
+          </p>
+        </div>
+
+        <!-- 2. Core Owners & Developers Spotlight -->
+        <div class="developers-container">
+          <div style="text-align:center; max-width:720px; margin:0 auto 2.25rem;">
+            <div class="founder-badge-pill">
+              <i class="fa-solid fa-crown"></i> Owned &amp; Developed By
+            </div>
+            <h2 style="font-size:2.2rem; font-weight:900; color:#fff; letter-spacing:-0.02em; margin-bottom:0.5rem;">
+              Rishabh Kumar &amp; Akash Kumar
+            </h2>
+            <p style="color:var(--text-secondary); font-size:1rem; line-height:1.6;">
+              We are the core developers and co-owners of EasyTool under the <strong style="color:#ffffff;">Farzi Engineer</strong> philosophy: <br>
+              <em style="color:#fbbf24; font-weight:700;">"Dimag Farzi &bull; Kaam Jugaad &bull; Result Zabardast"</em>.
+            </p>
+          </div>
+
+          <div class="devs-grid">
+            <!-- Rishabh Kumar -->
+            <div class="dev-profile-card">
+              <div class="dev-header-flex">
+                <div class="dev-avatar">RK</div>
+                <div>
+                  <div class="dev-name">Rishabh Kumar</div>
+                  <div class="dev-role">Core Owner &amp; Lead Systems Developer</div>
+                  <div class="dev-sub">WebAssembly &bull; UI/UX &bull; Farzi Engineer Core</div>
+                </div>
+              </div>
+              <p class="dev-bio">
+                Leads client-side WebAssembly system integration, interactive canvas graphics pipelines, Pyodide WASM runtime sandboxing, and ultra-fast responsive UI/UX architecture.
+              </p>
+              <div class="dev-tags-row">
+                <span class="dev-tag-pill">WebAssembly</span>
+                <span class="dev-tag-pill">UI/UX Design</span>
+                <span class="dev-tag-pill">Pyodide WASM</span>
+                <span class="dev-tag-pill">HTML5 Canvas</span>
+                <span class="dev-tag-pill">Client Optimization</span>
+                <span class="dev-tag-pill">Farzi Engineer Core</span>
+              </div>
+            </div>
+
+            <!-- Akash Kumar -->
+            <div class="dev-profile-card">
+              <div class="dev-header-flex">
+                <div class="dev-avatar ak">AK</div>
+                <div>
+                  <div class="dev-name">Akash Kumar</div>
+                  <div class="dev-role">Core Owner &amp; Full Stack Developer</div>
+                  <div class="dev-sub">Architecture &bull; Tool Engines &bull; Farzi Engineer Core</div>
+                </div>
+              </div>
+              <p class="dev-bio">
+                Architects the end-to-end multi-category utility engine, client-side PDF/Image binary processing pipelines, cryptographic hash validation, and secure Cloud API proxies.
+              </p>
+              <div class="dev-tags-row">
+                <span class="dev-tag-pill">Full Stack Architecture</span>
+                <span class="dev-tag-pill">Tool Engines</span>
+                <span class="dev-tag-pill">PDF-Lib &amp; PDF.js</span>
+                <span class="dev-tag-pill">Web Crypto API</span>
+                <span class="dev-tag-pill">Cloud API Gateway</span>
+                <span class="dev-tag-pill">Farzi Engineer Core</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. The 7 Core Pillars of EasyTool -->
+        <div style="margin-bottom:3.5rem;">
+          <div class="section-headline-block">
+            <div class="section-pill-tag" style="background:rgba(99,102,241,0.12); color:#a5b4fc; border:1px solid rgba(99,102,241,0.25);">
+              <i class="fa-solid fa-compass"></i> Core Foundation
+            </div>
+            <h2 class="section-headline-title">Our Operating Principles</h2>
+            <p class="section-headline-sub">
+              EasyTool adheres to a strict standard: Real Functionality &bull; Security &bull; Privacy &bull; Fast Processing &bull; Reliable Downloads.
+            </p>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(310px, 1fr)); gap:1.5rem;">
+            <!-- Pillar 1 -->
+            <div class="about-feature-box">
+              <div style="width:44px; height:44px; border-radius:10px; background:rgba(99,102,241,0.15); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+                <i class="fa-solid fa-code-branch"></i>
+              </div>
+              <h3 style="font-size:1.15rem; font-weight:800; color:#fff;">1. Free &amp; Open Source</h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;">
+                No paywalls, hidden fees, subscriptions, or feature locks. EasyTool leverages open-source engines and gives back to the developer community.
+              </p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="about-feature-box">
+              <div style="width:44px; height:44px; border-radius:10px; background:rgba(16,185,129,0.15); color:var(--accent-emerald); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <h3 style="font-size:1.15rem; font-weight:800; color:#fff;">2. Local-First Processing</h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;">
+                Whenever technically possible, your files never leave your device. WebAssembly, Canvas, and Web Crypto handle file conversions right inside your browser.
+              </p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="about-feature-box">
+              <div style="width:44px; height:44px; border-radius:10px; background:rgba(6,182,212,0.15); color:var(--accent-cyan); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+                <i class="fa-solid fa-user-slash"></i>
+              </div>
+              <h3 style="font-size:1.15rem; font-weight:800; color:#fff;">3. Zero Mandatory Accounts</h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;">
+                No logins, email signups, passwords, or telephone numbers required. Instant access to all 68+ utilities the moment you open the website.
+              </p>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="about-feature-box">
+              <div style="width:44px; height:44px; border-radius:10px; background:rgba(244,63,94,0.15); color:var(--accent-rose); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <h3 style="font-size:1.15rem; font-weight:800; color:#fff;">4. Zero Permanent Storage</h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;">
+                We maintain no document database, permanent cloud storage, or upload logs. Files are held ephemerally in RAM and released upon download.
+              </p>
+            </div>
+
+            <!-- Pillar 5 -->
+            <div class="about-feature-box">
+              <div style="width:44px; height:44px; border-radius:10px; background:rgba(245,158,11,0.15); color:var(--accent-amber); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <h3 style="font-size:1.15rem; font-weight:800; color:#fff;">5. Strict No-Fake-Tools Policy</h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;">
+                No fake progress bars, fake download links, or dummy mock calculations. If an engine cannot perform the task, we mark it unavailable instead of faking it.
+              </p>
+            </div>
+
+            <!-- Pillar 6 -->
+            <div class="about-feature-box">
+              <div style="width:44px; height:44px; border-radius:10px; background:rgba(168,85,247,0.15); color:var(--accent-purple); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+              </div>
+              <h3 style="font-size:1.15rem; font-weight:800; color:#fff;">6. Transparent API Disclosure</h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;">
+                We clearly disclose when a feature uses external cloud computing (such as Google Gemini API for NLP and Background.bg for background extraction).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Technology Stack Matrix -->
+        <div class="prose-card" style="margin-bottom:3.5rem;">
+          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+            <div style="width:42px; height:42px; border-radius:10px; background:rgba(99,102,241,0.15); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.25rem;">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h2 style="font-size:1.6rem; font-weight:800; color:#fff;">Full Technology Stack Disclosure</h2>
+          </div>
+          <p class="prose-p">
+            EasyTool is built on modern, lightweight, and standards-compliant technologies:
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:1.25rem; margin-top:1.5rem;">
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-sm); padding:1.25rem;">
+              <div style="font-size:0.8rem; font-weight:800; color:#818cf8; text-transform:uppercase; margin-bottom:0.5rem;"><i class="fa-solid fa-code"></i> Frontend Core</div>
+              <div style="font-size:0.86rem; color:var(--text-secondary); line-height:1.65;">
+                HTML5 &bull; Vanilla Modern CSS3 &bull; Modular ES6+ JavaScript &bull; Responsive Design System
+              </div>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-sm); padding:1.25rem;">
+              <div style="font-size:0.8rem; font-weight:800; color:#38bdf8; text-transform:uppercase; margin-bottom:0.5rem;"><i class="fa-solid fa-gears"></i> In-Browser Sandboxes</div>
+              <div style="font-size:0.86rem; color:var(--text-secondary); line-height:1.65;">
+                WebAssembly &bull; Pyodide (Python 3 WASM) &bull; HTML5 Canvas &bull; Web Crypto &bull; Web Audio API
+              </div>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-sm); padding:1.25rem;">
+              <div style="font-size:0.8rem; font-weight:800; color:#34d399; text-transform:uppercase; margin-bottom:0.5rem;"><i class="fa-solid fa-cubes"></i> Open-Source Libraries</div>
+              <div style="font-size:0.86rem; color:var(--text-secondary); line-height:1.65;">
+                PDF.js &bull; PDF-Lib &bull; jsPDF &bull; QRCode.js &bull; jsQR &bull; js-beautify &bull; jsDiff
+              </div>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-sm); padding:1.25rem;">
+              <div style="font-size:0.8rem; font-weight:800; color:#c084fc; text-transform:uppercase; margin-bottom:0.5rem;"><i class="fa-solid fa-cloud"></i> Disclosed Cloud APIs</div>
+              <div style="font-size:0.86rem; color:var(--text-secondary); line-height:1.65;">
+                Google Gemini API (NLP &amp; Writing) &bull; Background.bg (Semantic Background Removal)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Section 18 Manifesto & Ownership Card -->
+        <div style="text-align:center; padding:3.25rem 2rem; background:linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(6,182,212,0.06) 100%); border:1px solid rgba(99,102,241,0.3); border-radius:var(--radius-lg); margin-bottom:3.5rem; position:relative; overflow:hidden;">
+          <h3 style="font-size:1.6rem; font-weight:900; color:#fff; margin-bottom:0.6rem;">Section 18 Transparency Manifesto</h3>
+          <div style="font-size:1.35rem; font-weight:900; background:var(--grad-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent; letter-spacing:0.02em; margin-bottom:0.85rem;">
+            Real Functionality &bull; Complete Privacy &bull; Zero Logins &bull; 100% Free
+          </div>
+          <p style="font-size:0.95rem; color:var(--text-secondary); max-width:700px; margin:0 auto 1.5rem; line-height:1.6;">
+            EasyTool is owned, designed, and actively maintained by <strong>Rishabh Kumar</strong> (Core Owner &amp; Lead Systems Developer &bull; WebAssembly &bull; UI/UX) &amp; <strong>Akash Kumar</strong> (Core Owner &amp; Full Stack Developer &bull; Architecture &bull; Tool Engines).
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); padding:0.45rem 1rem; border-radius:var(--radius-full); font-size:0.82rem; color:#fff;">
+            <i class="fa-solid fa-globe" style="color:var(--accent-cyan);"></i> Official Domain: <strong>easytool.farziengineer.in</strong>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div>
+            <div class="brand-logo" style="margin-bottom:0.75rem;">
+              <img src="icon.svg" alt="EasyTool Logo" style="width:34px; height:34px;">
+              <span class="brand-title" style="font-size:1.25rem;">EasyTool</span>
+            </div>
+            <p class="footer-brand-desc">
+              Free &amp; Open-Source Online Utility Web Application. Designed with a local-first architecture for fast, private, and reliable everyday workflows.
+            </p>
+            <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(99,102,241,0.12); border:1px solid rgba(99,102,241,0.3); padding:0.4rem 0.85rem; border-radius:var(--radius-full); font-size:0.76rem; font-weight:700; color:#c7d2fe;">
+              <i class="fa-solid fa-bolt" style="color:#fbbf24;"></i> Developed by Rishabh Kumar &amp; Akash Kumar
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Navigation</div>
+            <ul class="footer-links-list">
+              <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+              <li><a href="tools.html"><i class="fa-solid fa-toolbox"></i> All Tools (68+)</a></li>
+              <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About EasyTool</a></li>
+              <li><a href="privacy.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Tool Studios</div>
+            <ul class="footer-links-list">
+              <li><a href="tools.html?cat=pdf"><i class="fa-solid fa-file-pdf"></i> PDF Studio</a></li>
+              <li><a href="tools.html?cat=calculators"><i class="fa-solid fa-calculator"></i> Calculators</a></li>
+              <li><a href="tools.html?cat=image"><i class="fa-solid fa-image"></i> Image Tools</a></li>
+              <li><a href="tools.html?cat=code"><i class="fa-solid fa-code"></i> Python &amp; Code</a></li>
+              <li><a href="tools.html?cat=ai"><i class="fa-solid fa-brain"></i> AI Utilities</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Trust &amp; Principles</div>
+            <ul class="footer-links-list">
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> 100% Client-Side Ready</span></li>
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> Zero Permanent Storage</span></li>
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> No Login or Accounts</span></li>
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> Zero Fake Tools</span></li>
+              <li><span style="color:var(--accent-cyan); font-size:0.82rem;"><i class="fa-solid fa-globe"></i> easytool.farziengineer.in</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+          <div class="footer-bottom-left">
+            <span class="footer-badge-brand">
+              <i class="fa-solid fa-bolt"></i> EasyTool
+            </span>
+            <span class="footer-badge-meta">Free &amp; Open-Source Platform</span>
+            <span class="footer-sep">&bull;</span>
+            <span class="footer-badge-devs">
+              Owned &amp; Developed by <strong>Rishabh Kumar &amp; Akash Kumar</strong>
+            </span>
+          </div>
+          <div class="footer-bottom-right">
+            <span class="footer-status-indicator">
+              <span class="pulse-indicator"></span>
+              <span>100% Client-Side Private</span>
+            </span>
+            <span class="footer-copyright-text">
+              &copy; 2026 Rishabh Kumar &amp; Akash Kumar.
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- PWA Mobile Install Floating Prompt -->
+    <div class="pwa-install-banner" id="pwa-install-banner">
+      <div class="pwa-banner-left">
+        <div class="pwa-banner-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="pwa-banner-text">
+          <div class="pwa-banner-title">Install EasyTool App</div>
+          <div class="pwa-banner-sub">Install on phone for real app experience</div>
+        </div>
+      </div>
+      <div class="pwa-banner-actions">
+        <button class="pwa-install-btn" onclick="App.installPwaApp()">Install</button>
+        <button class="pwa-close-btn" onclick="App.dismissPwaBanner()" aria-label="Dismiss">&times;</button>
+      </div>
+    </div>
+
+    <!-- Native Mobile Bottom Navigation App Bar -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile Navigation App Bar">
+      <a href="index.html" class="bottom-nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="tools.html" class="bottom-nav-item">
+        <i class="fa-solid fa-toolbox"></i>
+        <span>Tools</span>
+      </a>
+      <button class="bottom-nav-item search-trigger" onclick="App.openCommandPalette()" aria-label="Quick Search">
+        <div class="bottom-search-circle">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <span>Search</span>
+      </button>
+      <a href="about.html" class="bottom-nav-item active">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>About</span>
+      </a>
+      <a href="privacy.html" class="bottom-nav-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Privacy</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- Command Palette Modal (Ctrl + K) -->
+  <div class="modal-overlay" id="cmd-palette-overlay">
+    <div class="command-modal">
+      <div class="cmd-search-wrap">
+        <i class="fa-solid fa-magnifying-glass" style="color:var(--primary); font-size:1.1rem;"></i>
+        <input type="text" id="cmd-search-input" class="cmd-search-input" placeholder="Type a tool name or keyword...">
+        <button type="button" class="cmd-close-btn" onclick="App.closeCommandPalette()" aria-label="Close search" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="cmd-results-list" id="cmd-results-list"></ul>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+  <script src="app.js?v=6.0"></script>
+</body>
+</html>

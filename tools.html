@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EasyTool Utilities Studio - 68+ Free and open-source online tools: PDF, Image, Video, Audio, Developer, Calculators, Converters, and AI utilities with local processing and zero file storage.">
+  <meta name="keywords" content="EasyTool, online utilities, pdf tools, image converter, calculators, converters, developer tools, local processing, farzi engineer, rishabh kumar, akash kumar">
+  <meta name="theme-color" content="#080911">
+  <title>All Utilities &amp; Studio | EasyTool - Free &amp; Open-Source</title>
+
+  <!-- PWA & Mobile Web App Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="EasyTool">
+  <link rel="apple-touch-icon" href="icon.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Free CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Core App Stylesheets -->
+  <link rel="stylesheet" href="style.css?v=6.0">
+  <link rel="stylesheet" href="tools.css?v=6.0">
+
+  <!-- External Client-Side Utility CDNs -->
+  <!-- 1. jsPDF (Images & Text to PDF) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- 2. PDF-Lib (PDF Merging, Splitting, Rotating, Watermarking) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <!-- 3. PDF.js (PDF Page Rendering to Canvas, Images & Text Extraction) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <!-- 4. js-beautify (HTML, CSS, JS Formatter) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.9/beautifier.min.js"></script>
+  <!-- 5. QRCode.js (QR Code Generator) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- 6. jsQR (QR Code Reader from Image) -->
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+  <!-- 7. jsDiff (Text & Code Comparison) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/5.1.0/diff.min.js"></script>
+  <!-- 8. Pyodide (In-Browser Python 3 WebAssembly) -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js" defer></script>
+</head>
+<body>
+
+  <div id="app-container">
+
+    <!-- Top Sticky Navigation Bar -->
+    <header class="top-header">
+      <div class="nav-brand-wrap">
+        <a href="index.html" class="brand-logo" title="EasyTool Home">
+          <img src="icon.svg" alt="EasyTool Logo">
+          <div>
+            <div class="brand-title">EasyTool</div>
+            <div class="brand-subtitle-badge">FARZI ENGINEER</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navigation Pages -->
+      <nav class="nav-center-menu">
+        <a href="index.html" class="top-nav-link">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+        <a href="tools.html" class="top-nav-link active">
+          <i class="fa-solid fa-toolbox"></i>
+          <span>All Tools</span>
+          <span class="top-nav-badge">68+</span>
+        </a>
+        <a href="about.html" class="top-nav-link">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>About</span>
+        </a>
+        <a href="privacy.html" class="top-nav-link">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Privacy & Disclosure</span>
+        </a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <div class="header-search-bar" onclick="App.openCommandPalette()" title="Search 68+ utilities">
+          <i class="fa-solid fa-magnifying-glass" style="color:var(--text-muted); font-size:0.85rem;"></i>
+          <input type="text" id="global-search-input" placeholder="Search 68+ utilities..." onclick="event.stopPropagation()">
+        </div>
+
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Dropdown Navigation Menu -->
+    <div class="mobile-nav-dropdown" id="mobile-dropdown-menu">
+      <a href="index.html" class="top-nav-link">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="tools.html" class="top-nav-link active">
+        <i class="fa-solid fa-toolbox"></i>
+        <span>All Tools (68+)</span>
+      </a>
+      <a href="about.html" class="top-nav-link">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>About EasyTool</span>
+      </a>
+      <a href="privacy.html" class="top-nav-link">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Privacy & Disclosure</span>
+      </a>
+    </div>
+
+    <!-- Main Workspace Container -->
+    <main class="main-content">
+      <div class="content-viewport">
+
+        <!-- 1. Catalog / Directory View -->
+        <div id="dashboard-view">
+          
+          <!-- Tools Page Header Banner -->
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1.25rem; margin-bottom:2rem;">
+            <div>
+              <div class="hero-pill" style="margin-bottom:0.6rem;">
+                <i class="fa-solid fa-shapes"></i> Universal Utility Directory
+              </div>
+              <h1 style="font-size:2.2rem; font-weight:800; letter-spacing:-0.03em; margin-bottom:0.4rem;">
+                Tools &amp; Utilities <span style="background:var(--grad-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Studio</span>
+              </h1>
+              <p style="color:var(--text-secondary); font-size:0.95rem; max-width:680px;">
+                Filter and launch 68+ utilities. Client-side browser processing with zero permanent storage, plus transparently disclosed AI features.
+              </p>
+            </div>
+
+            <!-- Quick Jump to Home or Palette -->
+            <div style="display:flex; gap:0.75rem; align-items:center;">
+              <button class="btn btn-secondary" onclick="App.openCommandPalette()">
+                <i class="fa-solid fa-magnifying-glass"></i> Quick Find
+              </button>
+            </div>
+          </div>
+
+          <!-- Processing Badges Filter Bar (Sections 20, 21) -->
+          <div class="badge-filter-bar">
+            <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin-right:0.35rem;">
+              Filter Engine:
+            </span>
+            <button class="badge-filter-pill active" data-badge-filter="all">
+              <i class="fa-solid fa-layer-group"></i> All Engines
+            </button>
+            <button class="badge-filter-pill" data-badge-filter="local">
+              <span class="tool-badge-pill local" style="padding:0; border:none; background:none;"><span class="badge-dot"></span></span> Local Only
+            </button>
+            <button class="badge-filter-pill" data-badge-filter="ai">
+              <span class="tool-badge-pill ai" style="padding:0; border:none; background:none;"><span class="badge-dot"></span></span> AI Tools
+            </button>
+            <button class="badge-filter-pill" data-badge-filter="api">
+              <span class="tool-badge-pill api" style="padding:0; border:none; background:none;"><span class="badge-dot"></span></span> External API
+            </button>
+          </div>
+
+          <!-- Category Filter Bar (11 Categories) -->
+          <div class="category-filter-bar">
+            <button class="cat-pill active" data-category="all">
+              <i class="fa-solid fa-shapes"></i> All Tools
+            </button>
+            <button class="cat-pill" data-category="calculators">
+              <i class="fa-solid fa-calculator" style="color:var(--accent-rose);"></i> Calculators
+            </button>
+            <button class="cat-pill" data-category="converters">
+              <i class="fa-solid fa-arrow-right-arrow-left" style="color:var(--accent-cyan);"></i> Converters
+            </button>
+            <button class="cat-pill" data-category="pdf">
+              <i class="fa-solid fa-file-pdf" style="color:var(--accent-rose);"></i> PDF Tools
+            </button>
+            <button class="cat-pill" data-category="image">
+              <i class="fa-solid fa-photo-film" style="color:var(--accent-cyan);"></i> Image Tools
+            </button>
+            <button class="cat-pill" data-category="media">
+              <i class="fa-solid fa-compact-disc" style="color:var(--accent-emerald);"></i> Audio &amp; Video
+            </button>
+            <button class="cat-pill" data-category="ai">
+              <i class="fa-solid fa-brain" style="color:#c084fc;"></i> AI Tools
+            </button>
+            <button class="cat-pill" data-category="code">
+              <i class="fa-solid fa-code" style="color:var(--accent-purple);"></i> Code &amp; Dev
+            </button>
+            <button class="cat-pill" data-category="security">
+              <i class="fa-solid fa-shield-halved" style="color:var(--accent-emerald);"></i> Security &amp; Crypto
+            </button>
+            <button class="cat-pill" data-category="time">
+              <i class="fa-solid fa-clock" style="color:var(--accent-amber);"></i> Date &amp; Time
+            </button>
+            <button class="cat-pill" data-category="business">
+              <i class="fa-solid fa-briefcase" style="color:var(--accent-cyan);"></i> Business &amp; Social
+            </button>
+            <button class="cat-pill" data-category="text">
+              <i class="fa-solid fa-font" style="color:var(--accent-amber);"></i> Text Tools
+            </button>
+            <button class="cat-pill" data-category="favorites">
+              <i class="fa-solid fa-star" style="color:var(--accent-amber);"></i> Pinned Favorites
+            </button>
+          </div>
+
+          <!-- Dynamic Organized Sectional Catalog Container -->
+          <div id="catalog-sections-container"></div>
+        </div>
+
+        <!-- 2. Active Tool Workspace View -->
+        <div id="tool-workspace-container" style="display:none;">
+          <div class="tool-view-header">
+            <div>
+              <div class="tool-view-breadcrumbs">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <span>/</span>
+                <a onclick="window.location.hash=''; return false;">All Tools</a>
+                <span>/</span>
+                <span id="tool-title-crumb">Tool Title</span>
+              </div>
+              <div class="tool-view-title-wrap">
+                <div class="tool-view-icon" id="tool-head-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div>
+                  <h2 class="tool-view-heading" id="tool-head-title">Tool Title</h2>
+                  <p class="tool-view-sub" id="tool-head-desc">Tool description</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tool-view-actions">
+              <button class="btn btn-secondary" onclick="window.location.hash='';">
+                <i class="fa-solid fa-arrow-left"></i> Back to All Tools
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Tool Body Mount -->
+          <div class="tool-canvas-card" id="tool-workspace-body"></div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div>
+            <div class="brand-logo" style="margin-bottom:0.75rem;">
+              <img src="icon.svg" alt="EasyTool Logo" style="width:34px; height:34px;">
+              <span class="brand-title" style="font-size:1.25rem;">EasyTool</span>
+            </div>
+            <p class="footer-brand-desc">
+              Free &amp; Open-Source Online Utility Web Application. Designed with a local-first architecture for fast, private, and reliable everyday workflows.
+            </p>
+            <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(99,102,241,0.12); border:1px solid rgba(99,102,241,0.3); padding:0.4rem 0.85rem; border-radius:var(--radius-full); font-size:0.76rem; font-weight:700; color:#c7d2fe;">
+              <i class="fa-solid fa-bolt" style="color:#fbbf24;"></i> Developed by Rishabh Kumar &amp; Akash Kumar
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Navigation</div>
+            <ul class="footer-links-list">
+              <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+              <li><a href="tools.html"><i class="fa-solid fa-toolbox"></i> All Tools (68+)</a></li>
+              <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About EasyTool</a></li>
+              <li><a href="privacy.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Popular Categories</div>
+            <ul class="footer-links-list">
+              <li><a href="tools.html?cat=pdf"><i class="fa-solid fa-file-pdf"></i> PDF Studio</a></li>
+              <li><a href="tools.html?cat=calculators"><i class="fa-solid fa-calculator"></i> Calculators</a></li>
+              <li><a href="tools.html?cat=image"><i class="fa-solid fa-image"></i> Image Tools</a></li>
+              <li><a href="tools.html?cat=code"><i class="fa-solid fa-code"></i> Python &amp; Dev</a></li>
+              <li><a href="tools.html?cat=ai"><i class="fa-solid fa-brain"></i> AI &amp; Smart Tools</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Trust &amp; Principles</div>
+            <ul class="footer-links-list">
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> 100% Client-Side Ready</span></li>
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> Zero File Retention</span></li>
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> No Login or Accounts</span></li>
+              <li><span style="color:var(--accent-emerald); font-size:0.82rem;"><i class="fa-solid fa-check"></i> Zero Fake Tools</span></li>
+              <li><span style="color:var(--accent-cyan); font-size:0.82rem;"><i class="fa-solid fa-globe"></i> easytool.farziengineer.in</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+          <div class="footer-bottom-left">
+            <span class="footer-badge-brand">
+              <i class="fa-solid fa-bolt"></i> EasyTool
+            </span>
+            <span class="footer-badge-meta">Free &amp; Open-Source Platform</span>
+            <span class="footer-sep">&bull;</span>
+            <span class="footer-badge-devs">
+              Owned &amp; Developed by <strong>Rishabh Kumar &amp; Akash Kumar</strong>
+            </span>
+          </div>
+          <div class="footer-bottom-right">
+            <span class="footer-status-indicator">
+              <span class="pulse-indicator"></span>
+              <span>100% Client-Side Private</span>
+            </span>
+            <span class="footer-copyright-text">
+              &copy; 2026 Rishabh Kumar &amp; Akash Kumar.
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- PWA Mobile Install Floating Prompt -->
+    <div class="pwa-install-banner" id="pwa-install-banner">
+      <div class="pwa-banner-left">
+        <div class="pwa-banner-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="pwa-banner-text">
+          <div class="pwa-banner-title">Install EasyTool App</div>
+          <div class="pwa-banner-sub">Install on phone for real app experience</div>
+        </div>
+      </div>
+      <div class="pwa-banner-actions">
+        <button class="pwa-install-btn" onclick="App.installPwaApp()">Install</button>
+        <button class="pwa-close-btn" onclick="App.dismissPwaBanner()" aria-label="Dismiss">&times;</button>
+      </div>
+    </div>
+
+    <!-- Native Mobile Bottom Navigation App Bar -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile Navigation App Bar">
+      <a href="index.html" class="bottom-nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="tools.html" class="bottom-nav-item active">
+        <i class="fa-solid fa-toolbox"></i>
+        <span>Tools</span>
+      </a>
+      <button class="bottom-nav-item search-trigger" onclick="App.openCommandPalette()" aria-label="Quick Search">
+        <div class="bottom-search-circle">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <span>Search</span>
+      </button>
+      <a href="about.html" class="bottom-nav-item">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>About</span>
+      </a>
+      <a href="privacy.html" class="bottom-nav-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Privacy</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- Command Palette Modal (Ctrl + K) -->
+  <div class="modal-overlay" id="cmd-palette-overlay">
+    <div class="command-modal">
+      <div class="cmd-search-wrap">
+        <i class="fa-solid fa-magnifying-glass" style="color:var(--primary); font-size:1.1rem;"></i>
+        <input type="text" id="cmd-search-input" class="cmd-search-input" placeholder="Type a tool name, converter, or keyword...">
+        <button type="button" class="cmd-close-btn" onclick="App.closeCommandPalette()" aria-label="Close search" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="cmd-results-list" id="cmd-results-list"></ul>
+      <div class="cmd-modal-footer">
+        <span>Press <kbd class="kbd-shortcut">↑</kbd> <kbd class="kbd-shortcut">↓</kbd> to navigate, <kbd class="kbd-shortcut">Enter</kbd> to launch</span>
+        <span>EasyTool v4.0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Stack -->
+  <div id="toast-container"></div>
+
+  <!-- Application Logic Modules -->
+  <script src="ai-tools.js?v=4.0"></script>
+  <script src="image-tools.js?v=4.0"></script>
+  <script src="media-tools.js?v=4.0"></script>
+  <script src="pdf-tools.js?v=4.0"></script>
+  <script src="code-tools.js?v=4.0"></script>
+  <script src="utility-tools.js?v=4.0"></script>
+  <script src="calculator-tools.js?v=4.0"></script>
+  <script src="converter-tools.js?v=4.0"></script>
+  <script src="time-tools.js?v=4.0"></script>
+  <script src="business-social-tools.js?v=4.0"></script>
+  <script src="app.js?v=4.0"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "name": "EasyTool - All-in-One Utility Web App",
+  "short_name": "EasyTool",
+  "description": "68+ Free, Private & Open-Source Utilities for PDF, Image, Code, Calculators, Converters & AI with In-Browser Local Processing",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#080911",
+  "theme_color": "#080911",
+  "categories": ["utilities", "productivity", "developer"],
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "48x48 72x72 96x96 128x128 192x192 256x256 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "All Tools Studio",
+      "short_name": "Tools",
+      "description": "Access all 68+ utilities",
+      "url": "./tools.html",
+      "icons": [{ "src": "icon.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "PDF Studio",
+      "short_name": "PDF",
+      "description": "Merge, convert & split PDFs",
+      "url": "./tools.html?cat=pdf",
+      "icons": [{ "src": "icon.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Calculators",
+      "short_name": "Calculators",
+      "description": "GST, EMI & SIP calculators",
+      "url": "./tools.html?cat=calculators",
+      "icons": [{ "src": "icon.svg", "sizes": "96x96" }]
+    }
+  ]
+}

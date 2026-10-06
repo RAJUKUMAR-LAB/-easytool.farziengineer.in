@@ -1,0 +1,20 @@
+{
+  "name": "easytool-utility-suite",
+  "version": "2.0.0",
+  "description": "68+ Client-Side Online Utilities Suite with Secure Backend API Proxy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "utility-tools",
+    "pdf-tools",
+    "image-tools",
+    "webassembly",
+    "gemini-ai",
+    "privacy-first"
+  ],
+  "author": "Rishabh Kumar & Akash Kumar (Farzi Engineer)",
+  "license": "MIT"
+}

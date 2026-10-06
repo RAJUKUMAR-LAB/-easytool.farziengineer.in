@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="etGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+    <filter id="etGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Outer Rounded Shield / Rounded Squircle -->
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#0d1322" stroke="url(#etGrad)" stroke-width="2" />
+  
+  <!-- Subtle Internal Grid Pattern / Accent -->
+  <rect x="8" y="8" width="48" height="48" rx="12" fill="url(#etGrad)" fill-opacity="0.12" />
+
+  <!-- Stylized Wrench / Utility Bolt / Engineering Tool Glyph -->
+  <!-- Gear teeth hints -->
+  <circle cx="32" cy="32" r="18" stroke="url(#etGrad)" stroke-width="2" stroke-dasharray="3 4" opacity="0.6" />
+
+  <!-- Center Lightning Bolt (Farzi Engineer & Speed Power Mark) -->
+  <path d="M34 14L22 34H33L30 50L44 28H32L34 14Z" fill="url(#goldGrad)" filter="url(#etGlow)" />
+  
+  <!-- Corner Sparkles -->
+  <circle cx="16" cy="18" r="1.5" fill="#38bdf8" />
+  <circle cx="48" cy="46" r="2" fill="#818cf8" />
+</svg>
